@@ -24,3 +24,5 @@ Route::get('/home', [EmployeeListController::class, 'index'])->name('home');
 
 Route::get('/employee', [EmployeeController::class, 'index']);
 Route::post('/employee-created', [EmployeeController::class, 'create'])->name('create');
+Route::get('/edit/{id}', [EmployeeController::class, 'show']);
+Route::post('/update', [EmployeeController::class, 'update'])->name('update');

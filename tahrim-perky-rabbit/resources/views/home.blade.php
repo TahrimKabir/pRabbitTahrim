@@ -38,13 +38,14 @@
                                 <th>Phone</th>
                                 <th>Department</th>
                                 <th>Achievement</th>
+                                <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
                                 @if($dept!=null)
                                 @foreach($dept as $d)
                                 <tr class="bg-dark">
-                                    <td colspan="5" class="display-4 text-center">{{$d->name}}</td>
+                                    <td colspan="6" class="display-4 text-center">{{$d->name}}</td>
                                 </tr>
                                 @php $i=0; @endphp
                                 @if($d->emp!=null)
@@ -62,6 +63,10 @@
                                         @if($i>0) , @endif
                                         @endforeach
                                         @endif
+                                    </td>
+                                    <td>
+                                        <a href="{{asset('edit/'.$e->id)}}" class="btn-danger btn btn-sm">edit</button>
+                                        <a href="{{asset('delete/'.$e->id)}}" class="btn-success btn btn-sm">delete</button>
                                     </td>
                                 </tr>
                                 @endforeach
