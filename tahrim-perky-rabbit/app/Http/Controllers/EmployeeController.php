@@ -29,4 +29,8 @@ class EmployeeController extends Controller
         Employee::where('id',$req->id)->update($data);
         return redirect('/home');
     }
+    public function delete($id){
+        $del = Employee::where('id',$id)->delete();
+        return redirect('/home');
+    }
 }
